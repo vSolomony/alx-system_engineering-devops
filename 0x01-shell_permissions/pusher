@@ -2,7 +2,7 @@
 
 echo "type commit"
 read comment
-echo "{$comment}"
+echo "${comment}"
 git add .
 git commit -m "${comment}"
 git push origin master

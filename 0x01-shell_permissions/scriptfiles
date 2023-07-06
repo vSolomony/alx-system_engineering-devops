@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "instert name of file"
+read var
+
+echo "#!/bin/bash" > ${var}
+chmod 777 ${var}
+
