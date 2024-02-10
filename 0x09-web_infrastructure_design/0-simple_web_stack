@@ -1,0 +1,43 @@
+Simple Web Stack Design
+Server Infrastructure:
+Components:
+1 Server
+1 Web Server (Nginx)
+1 Application Server
+1 Application Code Base
+1 Database (MySQL)
+User Interaction:
+User types www.foobar.com in the browser.
+DNS resolves www.foobar.com to the server's IP address (8.8.8.8).
+User's request reaches the server.
+Explanation of Components:
+Server:
+Physical or virtual machine handling requests and responses.
+Domain Name:
+www.foobar.com is the human-readable address for the server.
+DNS Record:
+www is a subdomain, and it's a CNAME (Canonical Name) record pointing to the server's IP.
+Web Server (Nginx):
+Receives and handles HTTP requests, serves static content, and passes dynamic requests to the application server.
+Application Server:
+Executes application logic, processes dynamic content, and communicates with the database.
+Database (MySQL):
+Stores and retrieves data requested by the application.
+Issues with this Infrastructure:
+Single Point of Failure (SPOF):
+If the server fails, the entire system goes down.
+Downtime during Maintenance:
+Deploying new code may require restarting the web server, causing downtime.
+Scaling Limitations:
+Difficulty handling high traffic; can't scale horizontally.
+Additional Explanations:
+Communication:
+
+The server communicates with the user's computer using the HTTP/HTTPS protocols.
+Acronyms:
+
+LAMP: Linux, Apache, MySQL, PHP/Python/Perl (In this case, we replaced Apache with Nginx)
+SPOF: Single Point of Failure
+QPS: Queries Per Second
+
+

@@ -1,0 +1,42 @@
+Scaling Up Web Infrastructure Design
+Readme
+Application Server vs. Web Server
+
+Server Infrastructure:
+
+Components:
+2 Servers (1 additional)
+1 Load Balancer (HAproxy) configured as a cluster
+1 Web Server (Nginx) on its own server
+1 Application Server on its own server
+1 Database (MySQL)
+Explanation of Components:
+
+Additional Server:
+
+Purpose:
+Enhances system scalability and allows for the separation of concerns.
+Reasoning:
+Distributes the load and improves fault tolerance.
+Load Balancer Cluster:
+
+Purpose:
+Ensures high availability and load distribution.
+Reasoning:
+Clustering ensures redundancy, preventing a single point of failure.
+Split Components on Separate Servers:
+
+Web Server on its own:
+Serves static content and handles client requests.
+Application Server on its own:
+Executes dynamic application logic.
+Database:
+Stores and retrieves data.
+Reasoning:
+Isolates components for better scalability, maintenance, and resource utilization.
+Issues with this Infrastructure:
+
+Complexity:
+Increased complexity due to the introduction of multiple servers.
+Resource Allocation:
+Ensuring proper resource allocation among servers might be challenging.

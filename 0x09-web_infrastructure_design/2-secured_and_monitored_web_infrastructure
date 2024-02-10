@@ -1,0 +1,52 @@
+Secured and Monitored Web Infrastructure Design
+Server Infrastructure:
+Components:
+3 Servers
+1 Web Server (Nginx)
+1 Application Server
+1 Load Balancer (HAproxy)
+1 Application Code Base
+1 Database (MySQL)
+Additional Elements:
+3 Firewalls
+1 SSL Certificate for HTTPS
+3 Monitoring Clients (Data collector for Sumologic or other monitoring services)
+Explanation of Components:
+Firewalls:
+Adds a layer of security by controlling incoming and outgoing traffic based on defined security rules.
+SSL Certificate (HTTPS):
+Encrypts data in transit, ensuring secure communication between users and the server.
+Monitoring Clients:
+Collects data on system performance, logs, and security events for analysis and troubleshooting.
+Why These Additions:
+Firewalls for Security:
+Protects against unauthorized access, ensuring only valid traffic reaches the servers.
+HTTPS for Secure Communication:
+Guards against eavesdropping and data tampering during transit.
+Monitoring for Insights:
+Provides insights into system performance, identifies issues, and aids in proactive maintenance.
+Monitoring Tool Data Collection:
+Data Collection Mechanism:
+Monitoring clients collect data on metrics, logs, and events, forwarding them to the monitoring tool (Sumologic).
+Monitoring Web Server QPS:
+Steps to Monitor QPS:
+Configure the monitoring tool to capture and analyze the query per second (QPS) metric from the web server logs.
+Issues with this Infrastructure:
+Terminating SSL at Load Balancer Level:
+Leaves the internal network vulnerable to potential attacks as the decrypted traffic is passed through.
+Single MySQL Server Accepting Writes:
+Creates a single point of failure for write operations, impacting system availability.
+Identical Components on Servers:
+Uniformity might lead to scalability issues and lack of diversity for fault tolerance.
+Additional Explanations:
+Firewall Configuration:
+
+Briefly explain the need for firewall rules based on the principle of least privilege.
+SSL Termination Concerns:
+
+Elaborate on the risks associated with terminating SSL at the load balancer level.
+Diversity in Server Components:
+
+Highlight the importance of diverse components for better fault tolerance.
+
+

@@ -1,0 +1,49 @@
+Distributed Web Infrastructure Design
+Server Infrastructure:
+Components:
+3 Servers
+1 Web Server (Nginx)
+1 Application Server
+1 Load Balancer (HAproxy)
+1 Application Code Base
+1 Database (MySQL)
+User Interaction:
+User types www.foobar.com in the browser.
+DNS resolves www.foobar.com to the load balancer's IP.
+Load balancer distributes the request to one of the application servers.
+Explanation of Components:
+Additional Elements and Their Purposes:
+Load Balancer (HAproxy):
+Balances traffic among multiple servers to improve performance and ensure high availability.
+Additional Server:
+Enhances system redundancy and allows for horizontal scaling.
+Primary-Replica Database Cluster:
+Improves database reliability and provides read scalability.
+Distribution Algorithm:
+Load Balancer Algorithm:
+Round Robin - Distributes requests equally among servers.
+Active-Active vs. Active-Passive Setup:
+Active-Active Setup:
+All servers actively handle requests simultaneously.
+Active-Passive Setup:
+Only one server handles requests actively; others act as backups, becoming active only if the primary fails.
+Primary-Replica (Master-Slave) Database Cluster:
+How it Works:
+Primary node accepts write operations, replicating data to replica nodes.
+Difference Between Primary and Replica:
+Primary handles write operations; replicas handle read operations, improving read scalability.
+Issues with this Infrastructure:
+Single Points of Failure (SPOF):
+Load balancer, web server, and database could be potential SPOFs.
+Security Issues:
+Lack of firewall and HTTPS exposes the infrastructure to security threats.
+No Monitoring:
+Absence of monitoring tools may lead to difficulties in identifying and resolving issues.
+Additional Explanations:
+Distribution Algorithm Details:
+Briefly explain how Round Robin works in the context of the load balancer.
+Active-Active vs. Active-Passive Clarification:
+Provide a concise comparison highlighting when each setup is preferred.
+Database Cluster Benefits:
+Emphasize the advantages of a Primary-Replica cluster for database reliability.
+
